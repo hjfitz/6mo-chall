@@ -1,8 +1,9 @@
-const express = require("express");
-const path = require("path");
+const express = require('express');
+const path = require('path');
 const compression = require('compression')();
 const logger = require('morgan')('dev');
 const helmet = require('helmet')();
+const api = require('./src/server/routes');
 
 /**
  * app vars
@@ -14,6 +15,7 @@ const index = path.join(pub, 'index.html');
 /**
  * express middleware
  */
+app.use('/api', api);
 app.use('/public', express.static(pub));
 app.use(compression);
 app.use(logger);

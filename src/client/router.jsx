@@ -1,15 +1,15 @@
 /**
  * main imports
  */
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 /**
  *  local imports
  */
 import Layout from './components/layout';
-import { Home } from './components/pages';
+import { Home, Calc, ContentfulPage } from './components/pages';
 
 /**
  * CSS imports
@@ -20,7 +20,7 @@ import './styles/main';
 /**
  * import service worker
  */
-import './worker';
+// import './worker';
 
 // scroll the app to the top on a route change
 const onUpdate = () => window.scrollTo(0, 0);
@@ -29,8 +29,11 @@ const onUpdate = () => window.scrollTo(0, 0);
 const router = (
   <BrowserRouter onUpdate={onUpdate}>
     <Layout>
-      {/* Routes go here */}
-      <Route exact path="/" component={Home} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/calculator" component={Calc} />
+        <Route exact path="/:contentfulPage" component={ContentfulPage} />
+      </Switch>
     </Layout>
   </BrowserRouter>
 );

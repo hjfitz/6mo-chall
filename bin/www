@@ -11,7 +11,7 @@ require('local-env-var')();
 const app = require('../app');
 
 // default to a given port
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 // set express var here as we need to attach to http server
 app.set('port', port);
@@ -25,3 +25,8 @@ server.listen(port);
 // inform us of the running server
 /* eslint-disable */
 server.on("listening", () => console.log(`Server running on port http://localhost:${port}`));
+
+// make promise rejections easier to debug
+process.on('unhandledRejection', (reason, p) => {
+  console.log('Unhandled Rejection at:', p, 'reason:', reason);
+});

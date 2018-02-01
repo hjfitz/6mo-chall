@@ -2,27 +2,30 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 const links = [
-  { name: 'Home', path: '/' },
-  { name: 'Upload', path: '/upload' },
-  { name: 'Logout', path: '/logout', external: true },
+  { name: 'About' },
+  { name: 'Security' },
+  { name: 'Research' },
+  { name: 'Our Solution' },
+  { name: 'Calculator' },
 ];
 
-const NavItem = ({
-  text, path, external, className,
-}) => {
-  if (external) {
-    return <li key={text} className={className}><a href={path}>{text}</a></li>;
-  }
-  return <li key={text} className={className}><Link to={path}>{text}</Link></li>;
+const NavItem = (props) => {
+  const { text, className } = props;
+  const path = `/${text.toLowerCase()}`;
+  const link = <Link to={path}className="nav-link">{text}</Link>;
+  return <li className={`nav-item ${className}`}>{link}</li>;
 };
 
-const renderNav = activeLink => {
-  const nav = links.map(({ name, path, external }) => {
+
+const renderNav = (activeLink) => {
+  const nav = links.map(({ name }) => {
+    const path = `/${name.toLowerCase()}`;
     const className = path === activeLink ? 'active' : '';
-    return <NavItem key={name} className={className} text={name} path={path} external={external} />;
+    return <NavItem key={name} className={className} text={name} />;
   });
   return nav;
 };
+
 
 class Header extends Component {
   constructor(props) {
@@ -43,16 +46,13 @@ class Header extends Component {
   render() {
     const nav = renderNav(this.state.path);
     return (
-      <nav>
-        <div className="nav-wrapper">
-          <a href="#!" className="brand-logo">Logo</a>
-          <a href="#!" data-target="mobile-demo" className="sidenav-trigger">
-            <i className="material-icons">menu</i>
-          </a>
-          <ul className="right hide-on-med-and-down">
-            {nav}
-          </ul>
-          <ul className="sidenav" id="mobile-demo">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <Link className="navbar-brand" to="/">Computational Chemistry</Link>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon" />
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
             {nav}
           </ul>
         </div>
