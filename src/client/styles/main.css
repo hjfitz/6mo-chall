@@ -3,12 +3,7 @@ html, body, #react, .layout, .page {
 }
 
 .page-hero {
-  display: block;
-  background-position: top;
-  background-repeat: no-repeat;
-  width: 100%;
-  position: relative;
-  background-size: contain;
+  filter: contrast(110%);
 }
 
 .page-hero > img {
@@ -17,4 +12,9 @@ html, body, #react, .layout, .page {
 
 .page-title {
   font-weight: 300;
+  color: white;
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 16px;
+  background-color: rgba(0,0,0,0.6);
 }

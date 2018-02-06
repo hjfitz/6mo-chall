@@ -18,21 +18,25 @@ export default class ContentfulPage extends Component {
     this.updatePage(nextProps.match.params.contentfulPage);
   }
 
-  updatePage(url) {
-    const contentfulPage = url || this.props.match.params.contentfulPage;
+  updatePage(pathname) {
+    const contentfulPage = pathname || this.props.match.params.contentfulPage;
     axios.get(`/api/contentful/${contentfulPage}`)
       .then(resp => resp.data)
       .then(data => data.fields)
       .then((fields) => {
         const { pageTitle, pageContent, pageHero } = fields;
-        // const { url } = pageHero.fields.file;
-        let url = '';
+        const { url } = pageHero.fields.file;
+        const { height } = pageHero.fields.file.details.image;
         const inner = { __html: marked(pageContent) };
         const content = <div dangerouslySetInnerHTML={inner} />;
         const page = (
-          <div className="page page-hero" style={{ backgroundImage: `url(https:${url})` }}>
+          <div className="page">
+            <div className="page-hero" style={{ backgroundImage: `url(https:${url})`, height: `${height}px` }}>
+              <div className="container">
+                <h1 className="page-title">{pageTitle}</h1>
+              </div>
+            </div>
             <div className="container">
-              <h1 className="page-title">{pageTitle}</h1>
               {content}
             </div>
           </div>

@@ -12,24 +12,14 @@ const links = [
 const NavItem = (props) => {
   const { text, className } = props;
   const path = `/${text.toLowerCase()}`;
-  const link = <Link to={path}className="nav-link">{text}</Link>;
+  const link = <Link to={path} className="nav-link">{text}</Link>;
   return <li className={`nav-item ${className}`}>{link}</li>;
 };
-
-
-const renderNav = (activeLink) => {
-  const nav = links.map(({ name }) => {
-    const path = `/${name.toLowerCase()}`;
-    const className = path === activeLink ? 'active' : '';
-    return <NavItem key={name} className={className} text={name} />;
-  });
-  return nav;
-};
-
 
 class Header extends Component {
   constructor(props) {
     super(props);
+    this.navitems = this.props.navitems;
     this.state = { path: window.location.pathname };
     this.instances = [];
   }
@@ -40,15 +30,30 @@ class Header extends Component {
     });
   }
 
-  componentDidMount() {
+
+  renderNav(activeLink) {
+    const nav = this.props.navitems.map((name) => {
+      const path = `/${name.toLowerCase()}`;
+      const className = path === activeLink ? 'active' : '';
+      return <NavItem key={name} className={className} text={name} />;
+    });
+    return nav;
   }
 
   render() {
-    const nav = renderNav(this.state.path);
+    const nav = this.renderNav(this.state.path);
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <Link className="navbar-brand" to="/">Computational Chemistry</Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <Link href="#!" className="navbar-brand" to="/">Computational Chemistry</Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">

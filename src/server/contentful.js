@@ -16,10 +16,22 @@ const getPage = async (page) => {
   return foundPage;
 };
 
+const getPages = async () => {
+  const { items } = await client.getEntries({ content_type: 'page', include: 10 });
+  const pageTitles = items.map(item => item.fields.pageTitle).sort();
+  return pageTitles;
+};
+
+contentfulApi.get('/pages', async (req, res) => {
+  const pages = await redis.lazyCache('contentful:pages', getPages);
+  res.json(pages);
+});
+
 contentfulApi.get('/:page', async (req, res) => {
   const { page } = req.params;
   const data = await redis.lazyCache(`contentful:${page}`, () => getPage(page));
   res.json(data);
 });
+
 
 module.exports = contentfulApi;
