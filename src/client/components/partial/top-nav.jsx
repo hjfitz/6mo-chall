@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-const links = [
-  { name: 'About' },
-  { name: 'Security' },
-  { name: 'Research' },
-  { name: 'Our Solution' },
-  { name: 'Calculator' },
-];
 
 const NavItem = (props) => {
   const { text, className } = props;
@@ -26,14 +19,15 @@ class Header extends Component {
 
   componentWillMount() {
     this.props.history.listen(({ pathname }) => {
-      this.setState({ path: pathname });
+      const path = encodeURI(pathname);
+      this.setState({ path });
     });
   }
 
 
   renderNav(activeLink) {
     const nav = this.props.navitems.map((name) => {
-      const path = `/${name.toLowerCase()}`;
+      const path = `/${encodeURIComponent(name).toLowerCase()}`;
       const className = path === activeLink ? 'active' : '';
       return <NavItem key={name} className={className} text={name} />;
     });
