@@ -4,6 +4,8 @@ html, body, #react, .layout, .page {
 
 .page-hero {
   filter: contrast(110%);
+  background-position: center;
+  background-size: cover;
 }
 
 .page-hero > img {
