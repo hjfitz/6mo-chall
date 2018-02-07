@@ -3,13 +3,7 @@ import React, { Component } from 'react';
 export default class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      children: (
-        <h3>
-          I'm rendered by React in <code>src/client/components/pages</code>
-        </h3>
-      ),
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -17,6 +11,13 @@ export default class Home extends Component {
   }
 
   render() {
-    return this.state.children;
+    return (
+      <div className="video-container">
+        <video className="hero-video" loop="true" autoplay="true">
+          <source src="/public/output-file.webm" loop="true" autoplay="true" />
+        </video>
+      </div>
+
+    );
   }
 }

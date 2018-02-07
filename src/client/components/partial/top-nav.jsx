@@ -37,23 +37,25 @@ class Header extends Component {
   render() {
     const nav = this.renderNav(this.state.path);
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <Link href="#!" className="navbar-brand" to="/">Computational Chemistry</Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            {nav}
-          </ul>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+        <div className="container">
+          <Link href="#!" className="navbar-brand" to="/">Computational Chemistry</Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+              {nav}
+            </ul>
+          </div>
         </div>
       </nav>
     );

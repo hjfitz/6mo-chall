@@ -28,6 +28,35 @@ html, body, #react, .layout, .page {
   padding: 12px;
 }
 
+.hero-video {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  filter: brightness(60%);
+}
+
+.video-container {
+  overflow: hidden;
+}
+
+p>a>img {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+}
+
+.navbar+.page {
+  padding-top: 56px;
+}
+
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .page-hero {
     text-align: center;
