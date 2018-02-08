@@ -14,6 +14,10 @@ export default class Layout extends Component {
       const navitems = [...(data.data), ...this.state.navitems];
       this.setState({ navitems });
     });
+    window.addEventListener('click', () => {
+      const open = document.querySelector('.navbar-collapse.collapse.show');
+      open.classList.remove('show');
+    });
   }
 
   render() {
