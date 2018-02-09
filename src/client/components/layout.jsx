@@ -6,7 +6,7 @@ import { TopNav, Footer } from './partial';
 export default class Layout extends Component {
   constructor(props) {
     super(props);
-    this.state = { navitems: ['Calculator'] };
+    this.state = { navitems: [] };
   }
 
   componentDidMount() {
@@ -16,7 +16,9 @@ export default class Layout extends Component {
     });
     window.addEventListener('click', () => {
       const open = document.querySelector('.navbar-collapse.collapse.show');
-      open.classList.remove('show');
+      if (open) {
+        open.classList.remove('show');
+      }
     });
   }
 

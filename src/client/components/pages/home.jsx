@@ -24,17 +24,17 @@ export default class Home extends Component {
         </div>
         <div className="container">
           <div className="row dark-row">
-            <div className="col-lg-4">
+            <div className="col-lg-4 info-card">
               <img className="rounded-circle" src="/public/images/lock.png" alt="Security icon" />
               <h2>Security</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora aspernatur eum accusantium voluptatibus, iste nisi iusto asperiores corrupti rem deserunt placeat alias dignissimos quibusdam nostrum, aut maiores? Rem, quasi.</p>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 info-card">
               <img className="rounded-circle" src="/public/images/cloud.png" alt="about icon" />
               <h2>About AWS</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora aspernatur eum accusantium voluptatibus, iste nisi iusto asperiores corrupti rem deserunt placeat alias dignissimos quibusdam nostrum, aut maiores? Rem, quasi.</p>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 info-card">
               <img className="rounded-circle" src="/public/images/light.png" alt="Proposed icon" />
               <h2>Proposed Solution</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora aspernatur eum accusantium voluptatibus, iste nisi iusto asperiores corrupti rem deserunt placeat alias dignissimos quibusdam nostrum, aut maiores? Rem, quasi.</p>

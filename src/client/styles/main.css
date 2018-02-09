@@ -68,6 +68,10 @@ p>a>img {
   border-color: #32383e;
 }
 
+.info-card {
+  text-align: center;
+}
+
 .video-container {
   position: relative;
 }
@@ -88,6 +92,7 @@ p>a>img {
   justify-content: center;
   flex-direction: column;
   color: white;
+  padding: 24px;
 }
 
 .dark-row img {

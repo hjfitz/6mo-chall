@@ -9,7 +9,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
  *  local imports
  */
 import Layout from './components/layout';
-import { Home, Calc, ContentfulPage } from './components/pages';
+import { Home, ContentfulPage } from './components/pages';
 
 /**
  * CSS imports
@@ -31,7 +31,6 @@ const router = (
     <Layout>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/calculator" component={Calc} />
         <Route exact path="/:contentfulPage" component={ContentfulPage} />
       </Switch>
     </Layout>
