@@ -16,6 +16,7 @@ export default class Home extends Component {
         <div className="video-container">
           <video className="hero-video" loop="true" autoPlay="true">
             <source src="/public/output-file.webm" loop="true" autoPlay="true" />
+            <img src="/public/ie-fallback.jpeg" title="Your browser doesn't support this medium" alt="fallback" />
           </video>
           <div className="video-overlay">
             <h1 className="video-overlay-title">Computational Chemistry @ Lilly</h1>

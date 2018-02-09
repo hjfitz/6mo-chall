@@ -99,6 +99,12 @@ p>a>img {
   padding: 16px;
 }
 
+.container p>img {
+  display: block;
+  margin: 0 auto;
+  padding: 16px 0 44px 0;
+}
+
 @media screen and (max-width: 768px) {
   .page-hero {
     text-align: center;

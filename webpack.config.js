@@ -1,11 +1,8 @@
 const Notifier = require('webpack-build-notifier');
-
-const ping = new Notifier({ title: `${process.env.SITE_NAME || 'Built'}` });
-
 const path = require('path');
 
+const ping = new Notifier({ title: `${process.env.SITE_NAME || 'Built'}` });
 const output = path.join(__dirname, 'public');
-
 
 module.exports = {
   entry: { bundle: ['./src/client/router.jsx'] },

@@ -2,3 +2,4 @@ node_modules/
 *.swp
 public/bundle*
 .env
+.DS_Store
