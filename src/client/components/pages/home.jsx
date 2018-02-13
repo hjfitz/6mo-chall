@@ -28,17 +28,17 @@ export default class Home extends Component {
             <div className="col-lg-4 info-card">
               <img className="rounded-circle" src="/public/images/lock.png" alt="Security icon" />
               <h2>Security</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora aspernatur eum accusantium voluptatibus, iste nisi iusto asperiores corrupti rem deserunt placeat alias dignissimos quibusdam nostrum, aut maiores? Rem, quasi.</p>
+              <p>Understand how a cloud-based solution may be the way to stronger, more efficient security!</p>
             </div>
             <div className="col-lg-4 info-card">
               <img className="rounded-circle" src="/public/images/cloud.png" alt="about icon" />
               <h2>About AWS</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora aspernatur eum accusantium voluptatibus, iste nisi iusto asperiores corrupti rem deserunt placeat alias dignissimos quibusdam nostrum, aut maiores? Rem, quasi.</p>
+              <p>The world's leading cloud service provider, integrating with Lilly to provide faster, more robust and cheaper HPC</p>
             </div>
             <div className="col-lg-4 info-card">
               <img className="rounded-circle" src="/public/images/light.png" alt="Proposed icon" />
               <h2>Proposed Solution</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora aspernatur eum accusantium voluptatibus, iste nisi iusto asperiores corrupti rem deserunt placeat alias dignissimos quibusdam nostrum, aut maiores? Rem, quasi.</p>
+              <p>We're moving HPC to the cloud, and cutting costs by 66%!</p>
             </div>
           </div>
         </div>
